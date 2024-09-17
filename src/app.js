@@ -1,14 +1,19 @@
-const { createServer } = require('node:http');
+import inquirer from "inquirer";
 
-const hostname = '127.0.0.1';
-const port = 3000;
-
-const server = createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello World');
-});
-
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
-});
+inquirer
+    .prompt([
+        {
+            type: "input",
+            name: "nome",
+            message: "Qual o seu nome?",
+        },
+        {
+            type: "list",
+            name: "idade",
+            message: "Qual a sua idade?",
+            choices: ["29 a 30", "40 a 50", "50+"],
+        },
+    ])
+    .then((answers) => {
+        console.log(`Oi ${answers.nome} com ${answers.idade} de vida`);
+    });

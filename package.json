@@ -1,12 +1,19 @@
 {
-  "name": "node-descomplica-pos",
-  "version": "1.0.0",
-  "description": "",
-  "main": "src/app.js",
-  "scripts": {
-    "dev": "node src/app.js"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+    "name": "node-descomplica-pos",
+    "version": "1.0.0",
+    "description": "",
+    "main": "src/app.js",
+    "scripts": {
+        "dev": "node src/app.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "type": "module",
+    "dependencies": {
+        "fs": "0.0.1-security",
+        "inquirer": "^11.0.1",
+        "path": "^0.12.7",
+        "url": "^0.11.4"
+    }
 }

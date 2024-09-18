@@ -1,9 +1,10 @@
+import { readFile } from "fs";
 import { createServer } from "http";
-import { parse } from "path";
 
 createServer(function (req, res) {
-    const q = parse(req.url, true);
-    const filename = '.' + q.pathname;
-    res.write("hello wordl descomplica");
-    return res.end();
+    readFile("demo-readFile.html", function (err, data) {
+        res.writeHead(200, { "Content-Type": "text/html" });
+        res.write(data);
+        return res.end();
+    });
 }).listen(8080);
